@@ -1,17 +1,17 @@
 version: "3"
 services:
-  web-node: 
+  web-node:
     build: .
     ports:
       - "3000:3000"
-    volumes: 
+    volumes:
       - ./:/code
   mongo:
-    image: mongo
+    image: mongo:4.4.6
     ports:
       - 27017:27017
     volumes:
       - mongodb:/data/db
 
-volumes:  
+volumes:
   mongodb:
