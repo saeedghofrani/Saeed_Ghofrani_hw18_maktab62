@@ -1,0 +1,17 @@
+version: "3"
+services:
+  web-node: 
+    build: .
+    ports:
+      - "3000:3000"
+    volumes: 
+      - ./:/code
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+
+volumes:  
+  mongodb:
